@@ -10,9 +10,3 @@ CREATE TABLE IF NOT EXISTS links (
 
 -- Index ho tro query xoa link cu (cron cleanup) va sap xep theo thoi gian tao
 CREATE INDEX IF NOT EXISTS idx_links_created_at ON links (created_at DESC);
-
--- Mo ta bang va tung column de de hieu khi doc schema
-COMMENT ON TABLE  public.links              IS 'Bang luu tru URL rut gon, id la Primary Key toi uu hoa bo nho';
-COMMENT ON COLUMN public.links.id           IS 'Primary Key: 7 den 10 ky tu chuan Base64URL (RFC 4648 §5)';
-COMMENT ON COLUMN public.links.original_url IS 'Duong dan URL dich day du (theo chuan RFC 3986)';
-COMMENT ON COLUMN public.links.created_at   IS 'Thoi gian tao ban ghi';
